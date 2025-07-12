@@ -16,14 +16,14 @@ function App() {
   const [articles, setArticles] = useState(articleData);
 
   const sortByDate = () => {
-    let sortedByDate = articleData.sort(
+    let sortedByDate = [...articleData].sort(
       (a, b) => new Date(b.date) - new Date(a.date)
     );
     setArticles(sortedByDate);
   };
 
   const sortByViews = () => {
-    let sortedByViews = articleData.sort((a, b) => b.views - a.views);
+    let sortedByViews = [...articleData].sort((a, b) => b.views - a.views);
     setArticles(sortedByViews);
   };
 
